@@ -1,6 +1,6 @@
 {
     "config": {
-      "name": "ethereum-graphql"
+      "name": "ethereum-graphql-pgres"
     },
     "chains": [
       {
@@ -18,10 +18,11 @@
     ],
     "offChainActors": [
       {
-        "dockerfile": "./offChain/graphql-node/Dockerfile",
-        "buildPath": "./offChain/graphql-node",
-        "name": "graphQLNode",
-        "ports": [3000]
+        "image": "postgres",
+        "name": "postgres1337",
+        "ports": [
+          5432
+        ]
       }
     ]
   }
