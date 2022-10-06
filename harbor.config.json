@@ -1,0 +1,27 @@
+{
+    "config": {
+      "name": "ethereum-graphql"
+    },
+    "chains": [
+      {
+        "chain": "ethereum",
+        "config": {
+          "artifactsPath": "./artifacts",
+          "deploy": {
+            "scripts": "./deploy"
+          },
+          "afterDeploy": {
+            "location": "./afterDeploy"
+          }
+        }
+      }
+    ],
+    "offChainActors": [
+      {
+        "dockerfile": "./offChain/graphql-node/Dockerfile",
+        "buildPath": "./offChain/graphql-node",
+        "name": "graphQLNode",
+        "ports": [3000]
+      }
+    ]
+  }
