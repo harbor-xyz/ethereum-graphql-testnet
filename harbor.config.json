@@ -1,36 +1,33 @@
 {
-    "config": {
-      "name": "ethereum-graphql-pgres"
-    },
-    "chains": [
-      {
-        "chain": "ethereum",
-        "config": {
-          "artifactsPath": "./artifacts",
-          "deploy": {
-            "scripts": "./deploy"
-          },
-          "afterDeploy": {
-            "location": "./afterDeploy"
-          },
-          "tag": "v2"
+  "config": {
+    "name": "ethereum-pgres"
+  },
+  "chains": [
+    {
+      "chain": "ethereum",
+      "config": {
+        "artifactsPath": "./artifacts",
+        "deploy": {
+          "scripts": "./deploy"
         }
-      }
-    ],
-    "offChainActors": [
-      {
-        "image": "postgres",
-        "name": "postgres1337",
-        "ports": [
-          5432
-        ],
-        "command": "postgres -cshared_preload_libraries=pg_stat_statements",
-        "environment": {
-          "POSTGRES_USER": "graph-node",
-          "POSTGRES_PASSWORD": "let-me-in",
-          "POSTGRES_DB": "graph-node"
-        },
-        "tag": "v2"
-      }
-    ]
-  }
+      },
+      "tag": "v2"
+    }
+  ],
+  "offChainActors": [
+    {
+      "image": "postgres",
+      "name": "postgres1337",
+      "ports": [
+        5432
+      ],
+      "command": "postgres -cshared_preload_libraries=pg_stat_statements",
+      "environment": {
+        "POSTGRES_USER": "graph-node",
+        "POSTGRES_PASSWORD": "let-me-in",
+        "POSTGRES_DB": "graph-node"
+      },
+      "tag": "v2"
+    }
+  ]
+}
